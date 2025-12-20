@@ -9,7 +9,7 @@ services:
     container_name: spead-nextjs
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3030:3000"
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_BASE_URL=https://spead.ai
@@ -26,7 +26,7 @@ services:
     container_name: spead-directus
     restart: unless-stopped
     ports:
-      - "8055:8055"
+      - "8056:8055"
     volumes:
       - ./directus/database:/directus/database
       - ./directus/uploads:/directus/uploads
@@ -37,15 +37,15 @@ services:
       ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
       DB_CLIENT: sqlite3
       DB_FILENAME: /directus/database/data.db
-      
+
       # Security
       WEBSOCKETS_ENABLED: "true"
       CORS_ENABLED: "true"
       CORS_ORIGIN: "https://spead.ai,https://admin.spead.ai"
-      
+
       # Public URL
       PUBLIC_URL: "https://admin.spead.ai"
-      
+
       # Rate Limiting
       RATE_LIMITER_ENABLED: "true"
       RATE_LIMITER_STORE: "memory"
