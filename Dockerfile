@@ -12,6 +12,12 @@ RUN npm ci
 # Copy source code
 COPY . .
 
+# Build args for Next.js public env vars
+ARG NEXT_PUBLIC_BASE_URL=https://spead.ai
+ARG NEXT_PUBLIC_DIRECTUS_URL=https://admin.spead.ai
+ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
+ENV NEXT_PUBLIC_DIRECTUS_URL=$NEXT_PUBLIC_DIRECTUS_URL
+
 # Build the application
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
