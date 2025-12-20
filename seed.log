@@ -1,0 +1,17 @@
+🚀 Starting Seeding Process to http://localhost:8055...
+❌ Seeding Execution Failed: Cannot use 'in' operator to search for 'otp' in password123
+🚀 Starting Seeding Process to http://localhost:8055...
+⚠️ Direct login failed: Cannot use 'in' operator to search for 'otp' in password123. Retrying with object payload...
+❌ Seeding Execution Failed: Invalid payload. Unexpected token " in JSON at position 0.
+🚀 Starting Seeding Process (Fetch Mode) to http://127.0.0.1:8055...
+✅ Authenticated as Admin
+📦 Created "authors" collection
+📦 Created "posts" collection
+🌱 Seeding Data...
++ Created Post: Spead AI Raises Series B to Accelerate Enterprise "Self-Healing" Systems
++ Created Post: Model v2.4 Release Notes: 40% Faster Inference
++ Created Post: Security Patch: Zero-Day Mitigation
++ Created Post: Spead Summit 2025: Defining the Post-SaaS Era
++ Created Post: New Integration: Salesforce Data Graph
++ Created Post: Gartner Names Spead AI "Cool Vendor" in Legal Tech
+✨ Seeding Complete!

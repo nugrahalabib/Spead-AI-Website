@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  # Next.js Frontend
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spead-nextjs
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_BASE_URL=https://spead.ai
+      - NEXT_PUBLIC_DIRECTUS_URL=https://admin.spead.ai
+      - DIRECTUS_WEBHOOK_SECRET=${DIRECTUS_WEBHOOK_SECRET}
+    depends_on:
+      - directus
+    networks:
+      - spead-network
+
+  # Directus CMS
+  directus:
+    image: directus/directus:10.10.0
+    container_name: spead-directus
+    restart: unless-stopped
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+    environment:
+      KEY: ${DIRECTUS_KEY}
+      SECRET: ${DIRECTUS_SECRET}
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /directus/database/data.db
+      
+      # Security
+      WEBSOCKETS_ENABLED: "true"
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "https://spead.ai,https://admin.spead.ai"
+      
+      # Public URL
+      PUBLIC_URL: "https://admin.spead.ai"
+      
+      # Rate Limiting
+      RATE_LIMITER_ENABLED: "true"
+      RATE_LIMITER_STORE: "memory"
+      RATE_LIMITER_POINTS: "50"
+      RATE_LIMITER_DURATION: "1"
+    networks:
+      - spead-network
+
+networks:
+  spead-network:
+    driver: bridge
