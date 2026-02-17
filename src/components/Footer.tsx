@@ -22,7 +22,7 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-[#0b1120] text-neutral-300">
+    <footer className="bg-background text-muted-foreground">
       {/* Main Content */}
       <div className="px-6 pt-16 pb-10 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
@@ -37,7 +37,7 @@ const Footer = () => {
                 className="object-contain w-auto h-10"
               />
             </Link>
-            <p className="text-sm text-white">{t("tagline")}</p>
+            <p className="text-sm text-foreground">{t("tagline")}</p>
             <div className="flex items-end flex-1 gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -46,7 +46,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex items-center justify-center transition-colors border border-white rounded-lg size-8 bg-white/5 hover:bg-white/10"
+                  className="flex items-center justify-center transition-colors border border-foreground rounded-lg size-8 bg-glass hover:bg-glass-hover"
                 >
                   <social.icon className="size-6" />
                 </a>
@@ -56,15 +56,15 @@ const Footer = () => {
 
           {/* Col 2: Company */}
           <div className="lg:col-span-2 lg:justify-self-end">
-            <h4 className="mb-4 text-sm font-semibold text-white lg:text-xl">{t("company")}</h4>
+            <h4 className="mb-4 text-sm font-semibold text-foreground lg:text-xl">{t("company")}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-sm text-white lg:text-base">
+                <Link href="/about" className="text-sm text-foreground lg:text-base">
                   {t("aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-white lg:text-base">
+                <Link href="/blog" className="text-sm text-foreground lg:text-base">
                   {t("blog")}
                 </Link>
               </li>
@@ -73,20 +73,20 @@ const Footer = () => {
 
           {/* Col 3: Our Location */}
           <div className="lg:col-span-3 lg:justify-self-end">
-            <h4 className="mb-4 text-sm font-semibold text-white lg:text-xl">{t("locationTitle")}</h4>
-            <p className="text-sm leading-relaxed text-white lg:text-base">{t("address")}</p>
+            <h4 className="mb-4 text-sm font-semibold text-foreground lg:text-xl">{t("locationTitle")}</h4>
+            <p className="text-sm leading-relaxed text-foreground lg:text-base">{t("address")}</p>
           </div>
 
           {/* Col 4: Contact Us */}
           <div className="lg:col-span-2 lg:justify-self-end">
-            <h4 className="mb-4 text-sm font-semibold text-white lg:text-xl">{t("contactTitle")}</h4>
+            <h4 className="mb-4 text-sm font-semibold text-foreground lg:text-xl">{t("contactTitle")}</h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`https://wa.me/628119152066`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-sm text-white lg:text-base"
+                  className="flex items-center gap-2.5 text-sm text-foreground lg:text-base"
                 >
                   <WhatsappIcon className="w-4 h-4 shrink-0" />
                   {t("phone1")}
@@ -95,7 +95,7 @@ const Footer = () => {
               <li>
                 <a
                   href="tel:0217210588"
-                  className="flex items-center gap-2.5 text-sm text-white lg:text-base"
+                  className="flex items-center gap-2.5 text-sm text-foreground lg:text-base"
                 >
                   <PhoneIcon className="w-4 h-4 shrink-0" />
                   {t("phone2")}
@@ -104,7 +104,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:info@caliana.id"
-                  className="flex items-center gap-2.5 text-sm text-white lg:text-base"
+                  className="flex items-center gap-2.5 text-sm text-foreground lg:text-base"
                 >
                   <EmailIcon className="w-4 h-4 shrink-0" />
                   {t("email")}
