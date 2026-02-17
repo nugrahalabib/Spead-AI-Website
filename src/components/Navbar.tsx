@@ -1,258 +1,134 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ChevronDown, BookOpen, Newspaper, LucideIcon } from "lucide-react";
-import { GlobalSettings, getAssetUrl } from "@/lib/directus";
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Link, usePathname } from '@/i18n/navigation';
+import Image from 'next/image';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { Menu, X } from 'lucide-react';
 
 type NavItem = {
   id: string;
-  label: string;
-  href?: string;
-  type?: "link" | "dropdown";
-  children?: {
-    id: string;
-    label: string;
-    description: string;
-    href: string;
-    icon: LucideIcon;
-    colorClass: string;
-  }[];
+  labelKey: string;
+  href: string;
 };
 
 const navItems: NavItem[] = [
-  { id: "features", label: "Features", href: "/#features", type: "link" },
-  { id: "solutions", label: "Solutions", href: "/#solutions", type: "link" },
-  {
-    id: "resources",
-    label: "Resources",
-    type: "dropdown",
-    children: [
-      {
-        id: "blog",
-        label: "Spead Insights",
-        description: "Deep dives into enterprise AI and legal tech.",
-        href: "/blog",
-        icon: BookOpen,
-        colorClass: "text-purple-500",
-      },
-      {
-        id: "news",
-        label: "Newsroom",
-        description: "Product updates, press releases, and announcements.",
-        href: "/news",
-        icon: Newspaper,
-        colorClass: "text-pink-500",
-      },
-    ],
-  },
-  { id: "security", label: "Security", href: "/#security", type: "link" },
-  { id: "pricing", label: "Pricing", href: "/#pricing", type: "link" },
+  { id: 'home', labelKey: 'home', href: '/' },
+  { id: 'features', labelKey: 'features', href: '/#features' },
+  { id: 'pricing', labelKey: 'pricing', href: '/#pricing' },
+  { id: 'contact', labelKey: 'contact', href: '/#contact' },
 ];
 
-interface NavbarProps {
-  settings?: GlobalSettings | null;
-}
-
-const Navbar = ({ settings }: NavbarProps) => {
-  const [hovered, setHovered] = useState<string | null>(null);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const Navbar = () => {
+  const t = useTranslations('Navbar');
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const logoLightUrl = getAssetUrl(settings?.logo_light);
-  const logoDarkUrl = getAssetUrl(settings?.logo_dark);
-  const siteName = settings?.site_name || "Spead";
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (pathname === "/") {
-      e.preventDefault();
-      const targetId = href.replace("/", ""); // Remove the leading slash to get #id
-      const elem = document.querySelector(targetId);
-      if (elem) {
-        elem.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href.replace('/#', '/'));
   };
-
-  const handleMouseEnter = (id: string) => {
-    setHovered(id);
-    if (id === "resources") setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(null);
-    setDropdownOpen(false);
-  };
-
-  // Determine if Resources should stay highlighted (Active State)
-  const isResourcesActive =
-    hovered === "resources" ||
-    dropdownOpen ||
-    pathname?.startsWith("/blog") ||
-    pathname?.startsWith("/news");
 
   return (
-    <div className="fixed z-50 w-full max-w-4xl px-4 transition-all duration-300 -translate-x-1/2 top-6 left-1/2">
-      <nav
-        className={`
-                rounded-full px-2 py-2 flex items-center justify-between transition-all duration-500 relative
-                ${
-                  scrolled
-                    ? "bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl"
-                    : "bg-transparent border border-transparent shadow-none"
-                }
-            `}
-      >
-        {/* Glass Reflection Effect */}
-        {scrolled && (
-          <div className="absolute inset-0 rounded-full pointer-events-none bg-gradient-to-b from-white/5 via-transparent to-transparent" />
-        )}
+    <header className="fixed top-0 z-50 w-full">
+      <div className="w-full border-b bg-foreground border-white/10 backdrop-blur-md">
+        <nav className="flex items-center justify-between max-w-7xl mx-auto  px-4 py-2.5 lg:px-6">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 pl-4 group">
-          {/* If Directus logos exist, use dark logo only */}
-          {logoLightUrl && logoDarkUrl ? (
-            <img
-              src={logoDarkUrl}
-              alt={siteName}
-              className="block object-contain w-auto h-8 transition-transform duration-300 group-hover:scale-105"
+          {/* Mobile: Hamburger */}
+          <button
+            className="flex items-center justify-center transition-colors rounded-lg lg:hidden w-9 h-9 text-neutral-400 hover:text-white"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={22} />
+          </button>
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/logo_spead_ai_color.png"
+              alt="Spead AI"
+              width={140}
+              height={36}
+              className="object-contain w-auto h-8"
+              priority
             />
-          ) : (
-            // Fallback to Icon + Text if no logo images
-            <>
-              <div className="p-1.5 rounded-lg bg-gradient-to-tr from-[#7C3AED] to-[#DB2777] shadow-[0_0_15px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.8)] transition-all duration-500">
-                <Sparkles size={16} className="text-white fill-white" />
-              </div>
-              <span className="font-bold text-lg tracking-wide text-white font-[family-name:var(--font-display)]">
-                {siteName}
-                <span className="text-[#14B8A6]">AI</span>
-              </span>
-            </>
-          )}
-        </Link>
+          </Link>
 
-        {/* Centered Navigation */}
-        <ul className="items-center hidden gap-1 md:flex">
-          {navItems.map((item) => (
-            <li
-              key={item.id}
-              className="relative"
-              onMouseEnter={() => handleMouseEnter(item.id)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {/* Link Items */}
-              {item.type === "link" ? (
+          {/* Desktop Nav */}
+          <ul className="items-center hidden gap-1 lg:flex">
+            {navItems.map((item) => (
+              <li key={item.id}>
                 <Link
-                  href={item.href || "#"}
-                  onClick={(e) => item.href && handleLinkClick(e, item.href)}
-                  className="relative z-10 block px-5 py-2 text-sm font-medium transition-colors duration-300 text-slate-400 hover:text-white"
+                  href={item.href}
+                  className={`
+                    px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200
+                    ${isActive(item.href)
+                      ? 'bg-white/10 text-white'
+                      : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    }
+                  `}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
-              ) : (
-                <button
-                  className={`relative z-10 flex items-center gap-1 px-5 py-2 text-sm font-medium transition-colors duration-300 cursor-default ${
-                    isResourcesActive ? "text-white" : "text-slate-400 hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                  <motion.span
-                    animate={{ rotate: isResourcesActive && dropdownOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown size={14} />
-                  </motion.span>
-                </button>
-              )}
+              </li>
+            ))}
+          </ul>
 
-              {/* Spotlight Hover Effect for Tabs */}
-              {(hovered === item.id || (item.id === "resources" && isResourcesActive)) &&
-                item.type !== "dropdown" && (
-                  <motion.div
-                    layoutId="nav-spotlight"
-                    className="absolute inset-0 rounded-full pointer-events-none bg-white/10 blur-sm"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                )}
-              {/* Active highlight for Resources specifically */}
-              {item.id === "resources" && isResourcesActive && (
-                <motion.div
-                  layoutId="nav-spotlight-resources" // Distinct layoutId to avoid conflict
-                  className="absolute inset-0 rounded-full pointer-events-none bg-white/10 blur-sm"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                />
-              )}
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+        </nav>
+      </div>
 
-              {/* Dropdown Menu */}
-              <AnimatePresence>
-                {item.type === "dropdown" && dropdownOpen && hovered === "resources" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -5, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -5, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-2 rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl border border-white/10 shadow-xl z-50 overflow-hidden"
-                  >
-                    <div className="flex flex-col gap-1">
-                      {item.children?.map((child) => (
-                        <Link
-                          key={child.id}
-                          href={child.href}
-                          onClick={() => setDropdownOpen(false)}
-                          className="flex items-start gap-4 p-3 transition-all duration-300 group rounded-xl hover:bg-white/5"
-                        >
-                          <div
-                            className={`p-2 rounded-lg bg-white/5 group-hover:bg-white/10 transition-colors ${child.colorClass}`}
-                          >
-                            <child.icon size={20} />
-                          </div>
-                          <div>
-                            <div className="text-white font-medium text-sm mb-0.5 group-hover:text-violet-300 transition-colors">
-                              {child.label}
-                            </div>
-                            <div className="text-xs leading-relaxed text-slate-400">
-                              {child.description}
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+      {/* Mobile Overlay */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/60 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Mobile Slide-in Menu */}
+      <div
+        className={`
+          fixed top-0 right-0 z-50 h-full w-72 bg-[#0d1526] border-l border-white/10
+          transition-transform duration-300 ease-in-out lg:hidden
+          ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}
+        `}
+      >
+        <div className="flex items-center justify-between p-4 border-b border-white/10">
+          <span className="text-sm font-semibold text-white">Menu</span>
+          <button
+            className="flex items-center justify-center w-8 h-8 transition-colors rounded-lg text-neutral-400 hover:text-white"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        <ul className="flex flex-col gap-1 p-4">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <Link
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={`
+                  block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200
+                  ${isActive(item.href)
+                    ? 'bg-white/10 text-white'
+                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                  }
+                `}
+              >
+                {t(item.labelKey)}
+              </Link>
             </li>
           ))}
         </ul>
-
-        {/* CTA Button */}
-        <div className="pr-1">
-          <Link
-            href="/#pricing"
-            className="group relative px-6 py-2.5 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-white text-sm font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:shadow-[0_0_30px_rgba(219,39,119,0.6)] hover:scale-105 transition-all duration-300 overflow-hidden inline-block"
-          >
-            <span className="relative z-10">Get Started</span>
-            <div className="absolute inset-0 z-0 -translate-x-full group-hover:animate-shine bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-          </Link>
-        </div>
-      </nav>
-    </div>
+      </div>
+    </header>
   );
 };
 

@@ -1,0 +1,148 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact Us"
+  },
+  "Hero": {
+    "badge": "No. 1 Best Administrative AI in Indonesia",
+    "title": "Meet your AI administrative employee",
+    "description": "Spead AI enables secure AI implementation leveraging institutional knowledge with full data governance and control."
+  },
+  "Features": {
+    "sectionTitle": "Features",
+    "sectionDescription": "Optimize departmental performance across your organization with intelligent AI integration",
+    "dailyPlanner": {
+      "stat": "90% More productive",
+      "title": "Daily Productivity Planner",
+      "description": "Improve workforce productivity through automated scheduling governance"
+    },
+    "docBuilder": {
+      "stat": "87% Faster",
+      "title": "Doc Builder",
+      "description": "Implement automated workflows for institutional document control"
+    },
+    "docAssistant": {
+      "stat": "Access to 1 million+ corporate documents",
+      "title": "Doc Assistant",
+      "description": "Enable decision-makers to interrogate comprehensive business data"
+    },
+    "aiPartner": {
+      "stat": "100% Intelligent",
+      "title": "AI Partner",
+      "description": "Your 24/7 business consultant"
+    },
+    "adminPanel": {
+      "stat": "100% Safety",
+      "title": "Enterprise Admin Panel",
+      "description": "Secure data sovereignty while enabling centralized policy enforcement"
+    }
+  },
+  "WhySpead": {
+    "sectionTitle": "Why Spead AI",
+    "sectionDescription": "Implement AI at scale to support all business operation",
+    "hybridIntelligence": {
+      "title": "Hybrid Intelligence",
+      "description": "Integrated Internal and External Data Integration"
+    },
+    "docAcceleration": {
+      "title": "Documentation Acceleration",
+      "description": "Streamlining and Simplifying Document Processes with Intelligent Automation"
+    },
+    "operationalEfficiency": {
+      "title": "Operational Efficiency",
+      "description": "Alignment of More Integrated and Synchronized Work Processes"
+    },
+    "strategicAlignment": {
+      "title": "Strategic Alignment",
+      "description": "Decision-Making Consistent with Business Direction"
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "description": "Strong Governance with Full Control over Data"
+    },
+    "exclusiveAccess": {
+      "title": "Exclusive AI Access",
+      "description": "Access enterprise capabilities configured to your organizational requirements"
+    }
+  },
+  "Pricing": {
+    "sectionTitle": "Pricing",
+    "perSeat": "Price per seat",
+    "perMonth": "/ month",
+    "cumulative": "Cumulative",
+    "freemium": {
+      "name": "Freemium",
+      "price": "Free",
+      "description": "for a trial period, free permanently",
+      "users": "1 User",
+      "pricePerSeat": "IDR 0",
+      "credits": "100 Generative Credits",
+      "features": [
+        "Unlimited Core Features"
+      ]
+    },
+    "plus": {
+      "name": "Plus",
+      "price": "IDR 3.990K",
+      "description": "For Teams & Small Businesses",
+      "users": "10 User",
+      "pricePerSeat": "IDR 399K",
+      "credits": "20,000 Generative Credits",
+      "features": [
+        "Unlimited Core Features",
+        "Company Context Productivity"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "IDR 8.990K",
+      "badge": "Recommendation",
+      "description": "Most chosen by mid-market companies requiring AI customization and administrative control",
+      "users": "25 User",
+      "pricePerSeat": "IDR 359K",
+      "credits": "60,000 Generative Credits",
+      "features": [
+        "All Plus package features",
+        "Company Context Productivity",
+        "AI Persona Customization",
+        "Mass Document Analysis",
+        "Priority Support",
+        "Administrator Dashboard"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "IDR 15.000K",
+      "description": "Fully customized to business specifications, with on-premise deployment for maximum control",
+      "users": "50 User",
+      "pricePerSeat": "IDR 300K",
+      "credits": "150,000 Generative Credits",
+      "features": [
+        "All Pro package features",
+        "User Analytics",
+        "Special Onboarding",
+        "Special Account Manager"
+      ]
+    }
+  },
+  "CTA": {
+    "title": "Build AI assistants that fit your business",
+    "description": "Transform faster, work smarter with Spead AI"
+  },
+  "Footer": {
+    "tagline": "Spead AI is an AI solution developed by Caliana, a technology brand focused on innovation and digital transformation.",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "blog": "Blog",
+    "locationTitle": "Our Location",
+    "address": "Graha Mas Fatmawati, Block B No. 9 RT.2/RW.5, Cipete Utara, Kec. Kby. Baru, South Jakarta City, Special Capital Region of Jakarta. 12150",
+    "contactTitle": "Contact Us",
+    "phone1": "0811-9152-066",
+    "phone2": "(021) 7210588",
+    "email": "info@caliana.id",
+    "supportedBy": "Supported by",
+    "copyright": "© 2026 PT Data Nusantara Adhikarya. All rights reserved."
+  }
+}
