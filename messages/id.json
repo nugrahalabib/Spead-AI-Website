@@ -1,0 +1,161 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "features": "Fitur",
+    "pricing": "Harga",
+    "contact": "Kontak Kami"
+  },
+  "Hero": {
+    "badge": "No.1 AI Administratif Terbaik di Indonesia",
+    "title": "Kenali AI Dengan Internal Knowledge Bisnis Anda",
+    "description": "Spead AI memungkinkan perusahaan mengelola AI berbasis knowledge internal dengan kontrol dan keamanan data."
+  },
+  "Features": {
+    "sectionTitle": "Fitur",
+    "sectionDescription": "Optimalkan performa seluruh departemen perusahaan dengan integrasi AI yang cerdas",
+    "dailyPlanner": {
+      "stat": "90% Lebih Produktif",
+      "title": "Daily Productivity Planner",
+      "description": "Optimalisasi jadwal yang terotomatisasi."
+    },
+    "docBuilder": {
+      "stat": "87% lebih cepat",
+      "title": "Doc Builder",
+      "description": "Standarisasi dan otomatisasi aset dokumen perusahaan."
+    },
+    "docAssistant": {
+      "stat": "Akses ke 1 juta+ dokumen perusahaan",
+      "title": "Doc Assistant",
+      "description": "Diskusi cerdas dengan seluruh data perusahaan."
+    },
+    "aiPartner": {
+      "stat": "100% cerdas",
+      "title": "AI Partner",
+      "description": "Konsultan bisnis 24/7 Anda."
+    },
+    "adminPanel": {
+      "stat": "100% Keamanan",
+      "title": "Enterprise Admin Panel",
+      "description": "Kedaulatan data dan tata kelola terpusat."
+    }
+  },
+  "WhySpead": {
+    "sectionTitle": "Kenapa Spead AI",
+    "sectionDescription": "Kuasai potensi AI sepenuhnya untuk mendukung setiap lini bisnis perusahaan",
+    "hybridIntelligence": {
+      "title": "Kecerdasan Hybrid",
+      "description": "Integrasi Data Internal dan Eksternal yang Terpadu"
+    },
+    "docAcceleration": {
+      "title": "Akselerasi Dokumentasi",
+      "description": "Mempercepat dan Menyederhanakan Proses Dokumen dengan Automasi Cerdas"
+    },
+    "operationalEfficiency": {
+      "title": "Efisiensi Operasional",
+      "description": "Penyelarasan Proses Kerja yang Lebih Terintegrasi dan Sinkron"
+    },
+    "strategicAlignment": {
+      "title": "Keselarasan Strategis",
+      "description": "Pengambilan Keputusan yang Konsisten dengan Arah Bisnis"
+    },
+    "dataSecurity": {
+      "title": "Keamanan Data",
+      "description": "Tata Kelola yang Kuat dengan Kontrol Penuh atas Data"
+    },
+    "exclusiveAccess": {
+      "title": "Akses AI Eksklusif",
+      "description": "Nikmati fitur premium yang dirancang khusus perusahaan Anda"
+    }
+  },
+  "Pricing": {
+    "sectionTitle": "Harga",
+    "perSeat": "Harga per seat",
+    "perMonth": "/ bulan",
+    "cumulative": "Kumulatif",
+    "freemium": {
+      "name": "Freemium",
+      "price": "Gratis",
+      "description": "Untuk coba-coba, gratis selamanya",
+      "users": "1 Pengguna",
+      "pricePerSeat": "Rp 0",
+      "credits": "100 Generative Credits",
+      "features": [
+        "Unlimited Fitur Inti"
+      ]
+    },
+    "plus": {
+      "name": "Plus",
+      "price": "IDR 3.990K",
+      "description": "Untuk Tim & UKM Awal",
+      "users": "10 Pengguna",
+      "pricePerSeat": "Rp 399rb",
+      "credits": "20.000 Generative Credits",
+      "features": [
+        "Unlimited Fitur Inti",
+        "Produktivitas Konteks Perusahaan"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "IDR 4.990K",
+      "badge": "Rekomendasi",
+      "description": "Pilihan terpopuler bagi bisnis menengah dengan kustomisasi AI dan admin",
+      "users": "25 Pengguna",
+      "pricePerSeat": "Rp 359rb",
+      "credits": "60.000 Generative Credits",
+      "features": [
+        "Semua fitur paket Plus",
+        "Produktivitas Konteks Perusahaan",
+        "Kustomisasi AI Persona",
+        "Analisis Dokumen Massal",
+        "Dukungan Prioritas",
+        "Admin Dashboard"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "IDR 15.000K",
+      "description": "Solusi lengkap, cocok untuk banyak pengguna & analitik",
+      "users": "50 Pengguna",
+      "pricePerSeat": "Rp 300rb",
+      "credits": "150.000 Generative Credits",
+      "features": [
+        "Semua fitur paket Pro",
+        "Analitik Pengguna",
+        "Onboarding Khusus",
+        "Manajer Akun Khusus"
+      ]
+    },
+    "custom": {
+      "name": "Custom",
+      "price": "Hubungi Sales",
+      "description": "Paket kustom penuh sesuai kebutuhan, tersedia opsi on-premise",
+      "users": "Unlimited Pengguna",
+      "pricePerSeat": "custom",
+      "credits": "Unlimited Generative Credits",
+      "features": [
+        "Semua fitur",
+        "On-Premise Deployment",
+        "SSO & SLA 99%"
+      ]
+    }
+  },
+  "CTA": {
+    "title": "Personalisasi asisten AI untuk bisnis Anda",
+    "description": "Jangan biarkan tim Anda tertinggal. Mulai transformasi digital Anda dan meningkatkan produktivitas tim dengan Spead AI."
+  },
+  "Footer": {
+    "tagline": "Spead AI adalah solusi AI yang dikembangkan oleh Caliana, sebuah merek teknologi yang fokus pada inovasi dan transformasi digital.",
+    "company": "Perusahaan",
+    "aboutUs": "Tentang Kami",
+    "blog": "Blog",
+    "locationTitle": "Lokasi Kami",
+    "address": "Graha Mas Fatmawati, Blok B no 9 RT.2/RW.5, Cipete Utara, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta. 12150",
+    "contactTitle": "Hubungi Kami",
+    "phone1": "0811-9152-066",
+    "phone2": "(021) 7210588",
+    "email": "info@caliana.id",
+    "supportedBy": "Didukung oleh",
+    "copyright": "© 2026 PT Data Nusantara Adhikarya. Semua hak dilindungi."
+  }
+}

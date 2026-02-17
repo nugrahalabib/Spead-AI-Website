@@ -7,9 +7,9 @@
 - **Approach**: Minimal changes to existing infrastructure (avoid Directus/Docker modifications)
 - **Key Constraints**:
   1. Design system will be implemented as part of this revamp
-  2. Implementing i18n (Indonesian + English) - **check Directus i18n support first**
-  3. If Directus lacks i18n support, replace home content with **static coded content** (no CMS)
-  4. Preserve existing Directus setup for other pages (blog, news) - don't break existing functionality
+  2. i18n (Indonesian + English) using **next-intl** with `[locale]` routing
+  3. All homepage (`/`) content is **static coded content** - no Directus dependency whatsoever
+  4. Directus is only for blog/news pages - homepage sections use i18n JSON translations
   5. Limited knowledge transfer from original maintainer - communicate via chat only
 
 **Implementation Strategy**:
