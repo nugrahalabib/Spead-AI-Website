@@ -3,6 +3,35 @@
 /* Import Spead design system utilities */
 @import './design-system/gradients.css';
 
+/* Class-based dark mode — next-themes adds .dark class to <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Semantic tokens — references CSS vars that adapt per light/dark mode.
+ * `inline` ensures utilities resolve to var(--foreground) directly,
+ * not var(--color-foreground), avoiding CSS scope issues.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-glass: var(--glass);
+  --color-glass-hover: var(--glass-hover);
+}
+
+/* Static design tokens — same in all modes */
 @theme {
   /* Fonts */
   --font-sans: var(--font-geist-sans);
@@ -92,6 +121,10 @@
     --input: #aeaaae;
     --ring: #0f1b28;
     --checkbox: #abc4d2;
+
+    /* Glass / frosted effects */
+    --glass: rgba(0, 0, 0, 0.05);
+    --glass-hover: rgba(0, 0, 0, 0.1);
   }
 
   /* Dark mode */
@@ -119,6 +152,10 @@
     --input: rgba(255, 255, 255, 0.2);
     --ring: #d4d4d4;
     --checkbox: #aadaf7;
+
+    /* Glass / frosted effects */
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-hover: rgba(255, 255, 255, 0.1);
   }
 
   body {

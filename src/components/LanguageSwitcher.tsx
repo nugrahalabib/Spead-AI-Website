@@ -20,7 +20,7 @@ export default function LanguageSwitcher() {
   return (
     <div
       className={`
-        flex items-center rounded-full bg-white/5 border border-white/10 p-0.5
+        flex items-center rounded-full bg-glass border border-border p-0.5
         ${isPending ? 'opacity-60 pointer-events-none' : ''}
       `}
     >
@@ -29,8 +29,8 @@ export default function LanguageSwitcher() {
         className={`
           px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200
           ${locale === 'id'
-            ? 'bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-white shadow-md'
-            : 'text-neutral-400 hover:text-white'
+            ? 'bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-foreground shadow-md'
+            : 'text-muted-foreground hover:text-foreground'
           }
         `}
       >
@@ -41,8 +41,8 @@ export default function LanguageSwitcher() {
         className={`
           px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200
           ${locale === 'en'
-            ? 'bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-white shadow-md'
-            : 'text-neutral-400 hover:text-white'
+            ? 'bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-foreground shadow-md'
+            : 'text-muted-foreground hover:text-foreground'
           }
         `}
       >

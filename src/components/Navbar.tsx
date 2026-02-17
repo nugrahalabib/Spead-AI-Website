@@ -32,12 +32,12 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full">
-      <div className="w-full border-b bg-foreground border-white/10 backdrop-blur-md">
+      <div className="w-full border-b bg-background border-border backdrop-blur-md">
         <nav className="flex items-center justify-between max-w-7xl mx-auto  px-4 py-2.5 lg:px-6">
 
           {/* Mobile: Hamburger */}
           <button
-            className="flex items-center justify-center transition-colors rounded-lg lg:hidden w-9 h-9 text-neutral-400 hover:text-white"
+            className="flex items-center justify-center transition-colors rounded-lg lg:hidden w-9 h-9 text-muted-foreground hover:text-foreground"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -65,8 +65,8 @@ const Navbar = () => {
                   className={`
                     px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200
                     ${isActive(item.href)
-                      ? 'bg-white/10 text-white'
-                      : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                      ? 'bg-glass-hover text-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-glass'
                     }
                   `}
                 >
@@ -92,15 +92,15 @@ const Navbar = () => {
       {/* Mobile Slide-in Menu */}
       <div
         className={`
-          fixed top-0 right-0 z-50 h-full w-72 bg-[#0d1526] border-l border-white/10
+          fixed top-0 right-0 z-50 h-full w-72 bg-background-muted border-l border-border
           transition-transform duration-300 ease-in-out lg:hidden
           ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
-        <div className="flex items-center justify-between p-4 border-b border-white/10">
-          <span className="text-sm font-semibold text-white">Menu</span>
+        <div className="flex items-center justify-between p-4 border-b border-border">
+          <span className="text-sm font-semibold text-foreground">Menu</span>
           <button
-            className="flex items-center justify-center w-8 h-8 transition-colors rounded-lg text-neutral-400 hover:text-white"
+            className="flex items-center justify-center w-8 h-8 transition-colors rounded-lg text-muted-foreground hover:text-foreground"
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
           >
@@ -117,8 +117,8 @@ const Navbar = () => {
                 className={`
                   block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200
                   ${isActive(item.href)
-                    ? 'bg-white/10 text-white'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-glass-hover text-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-glass'
                   }
                 `}
               >
