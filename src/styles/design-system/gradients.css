@@ -1,7 +1,7 @@
 /* Gradient utilities dari spead app */
 
 .gradient__text {
-  background: linear-gradient(120deg, var(--secondary) 0%, var(--primary-50) 100%);
+  background: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary-50) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,7 +62,7 @@
   border-color: var(--background);
   background:
     linear-gradient(var(--background), var(--background)) padding-box,
-    linear-gradient(90deg, var(--secondary), var(--primary-50)) border-box;
+    linear-gradient(90deg, var(--color-secondary), var(--color-primary-50)) border-box;
 }
 
 .gradient__border-dashed__bg-muted {
@@ -70,7 +70,7 @@
   border-color: var(--background-muted);
   background:
     linear-gradient(var(--background-muted), var(--background-muted)) padding-box,
-    linear-gradient(90deg, var(--secondary), var(--primary-50)) border-box;
+    linear-gradient(90deg, var(--color-secondary), var(--color-primary-50)) border-box;
 }
 
 .gradient__border-thin {
@@ -78,8 +78,8 @@
   background-color: var(--background);
   border: transparent 1px solid !important;
   background:
-    radial-gradient(circle at 50% 50%, var(--background), var(--background)) padding-box,
-    linear-gradient(90deg, var(--secondary), var(--primary-50)) border-box;
+    linear-gradient(90deg, #5478997d, var(--background-muted)) padding-box,
+    linear-gradient(90deg, var(--background-muted), #5478997d) border-box;
 }
 .gradient__border-thin-flipped {
   color: var(--foreground) !important;
@@ -87,7 +87,7 @@
   border: transparent 1px solid !important;
   background:
     radial-gradient(circle at 50% 50%, var(--background), var(--background)) padding-box,
-    linear-gradient(90deg, var(--primary-50), var(--secondary)) border-box;
+    linear-gradient(90deg, var(--color-primary-50), var(--color-secondary)) border-box;
 }
 .gradient__border-thin-flipped__bg-muted {
   color: var(--foreground) !important;
@@ -95,20 +95,20 @@
   border: transparent 1px solid !important;
   background:
     radial-gradient(circle at 50% 50%, var(--background-muted), var(--background-muted)) padding-box,
-    linear-gradient(90deg, var(--primary-50), var(--secondary)) border-box;
+    linear-gradient(90deg, var(--color-primary-50), var(--color-secondary)) border-box;
 }
 
 .gradient__background {
-  background: linear-gradient(88.79deg, var(--primary-50) 0.99%, var(--secondary) 98.91%);
+  background: linear-gradient(88.79deg, var(--color-primary-50) 0.99%, var(--color-secondary) 98.91%);
 }
 
 .gradient__btn {
-  background: linear-gradient(88.79deg, var(--primary-50) 0.99%, var(--secondary) 98.91%);
+  background: linear-gradient(88.79deg, var(--color-primary-50) 0.99%, var(--color-secondary) 98.91%);
   color: #f2f2f2 !important;
 }
 
 .gradient__btn:hover {
-  background: linear-gradient(88.79deg, var(--secondary) 0.99%, var(--primary-50) 98.91%);
+  background: linear-gradient(88.79deg, var(--color-secondary) 0.99%, var(--color-primary-50) 98.91%);
   opacity: 0.95;
 }
 
@@ -137,7 +137,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
+    rgb(255, 255, 255, 0.5) 50%,
     rgba(255, 255, 255, 0.1) 100%
   );
 }
@@ -186,7 +186,7 @@ https://codepen.io/fabianmichael/pen/yLPyRry
   bottom: 0;
   border-radius: 0.5rem;
   padding: 1px;
-  background: linear-gradient(90deg, var(--primary-50), var(--secondary));
+  background: linear-gradient(90deg, var(--color-primary-50), var(--color-secondary));
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -224,7 +224,7 @@ https://codepen.io/fabianmichael/pen/yLPyRry
   bottom: 0;
   border-radius: 1rem;
   padding: 3px;
-  background: linear-gradient(90deg, var(--primary-50), var(--secondary));
+  background: linear-gradient(90deg, var(--color-primary-50), var(--color-secondary));
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);

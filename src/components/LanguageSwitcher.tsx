@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/navigation';
-import { useTransition } from 'react';
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useTransition } from "react";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -10,7 +10,7 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  function switchLocale(nextLocale: 'id' | 'en') {
+  function switchLocale(nextLocale: "id" | "en") {
     if (nextLocale === locale) return;
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
@@ -20,34 +20,38 @@ export default function LanguageSwitcher() {
   return (
     <div
       className={`
-        flex items-center rounded-full bg-glass border border-border p-0.5
-        ${isPending ? 'opacity-60 pointer-events-none' : ''}
+        flex items-center rounded-full bg-background border border-border p-0.5
+        ${isPending ? "opacity-60 pointer-events-none" : ""}
       `}
     >
-      <button
-        onClick={() => switchLocale('id')}
-        className={`
-          px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200
-          ${locale === 'id'
-            ? 'bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-foreground shadow-md'
-            : 'text-muted-foreground hover:text-foreground'
+      <div className="flex items-center rounded-full bg-background-muted p-0.5">
+        <button
+          onClick={() => switchLocale("id")}
+          className={`
+          px-5 py-1.5 rounded-full text-xs lg:text-base font-semibold tracking-wide transition-all duration-200
+          ${
+            locale === "id"
+              ? "bg-linear-to-r from-[#E24980] to-[#8B4DA8] text-foreground shadow-md"
+              : "text-muted-foreground hover:text-foreground"
           }
         `}
-      >
-        ID
-      </button>
-      <button
-        onClick={() => switchLocale('en')}
-        className={`
-          px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200
-          ${locale === 'en'
-            ? 'bg-gradient-to-r from-[#7C3AED] to-[#DB2777] text-foreground shadow-md'
-            : 'text-muted-foreground hover:text-foreground'
+        >
+          ID
+        </button>
+        <button
+          onClick={() => switchLocale("en")}
+          className={`
+          px-5 py-1.5 rounded-full text-xs lg:text-base font-semibold tracking-wide transition-all duration-200
+          ${
+            locale === "en"
+              ? "bg-linear-to-r from-[#E24980] to-[#8B4DA8] text-foreground shadow-md"
+              : "text-muted-foreground hover:text-foreground"
           }
         `}
-      >
-        EN
-      </button>
+        >
+          EN
+        </button>
+      </div>
     </div>
   );
 }

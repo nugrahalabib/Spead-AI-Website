@@ -8,7 +8,9 @@
   "Hero": {
     "badge": "No.1 AI Administratif Terbaik di Indonesia",
     "title": "Kenali AI Dengan Internal Knowledge Bisnis Anda",
-    "description": "Spead AI memungkinkan perusahaan mengelola AI berbasis knowledge internal dengan kontrol dan keamanan data."
+    "description": "Spead AI memungkinkan perusahaan mengelola AI berbasis knowledge internal dengan kontrol dan keamanan data.",
+    "ctaPrimary": "Coba Gratis",
+    "ctaSecondary": "Hubungi Sales"
   },
   "Features": {
     "sectionTitle": "Fitur",
@@ -61,17 +63,17 @@
     "dataSecurity": {
       "title": "Keamanan Data",
       "description": "Tata Kelola yang Kuat dengan Kontrol Penuh atas Data"
-    },
-    "exclusiveAccess": {
-      "title": "Akses AI Eksklusif",
-      "description": "Nikmati fitur premium yang dirancang khusus perusahaan Anda"
     }
   },
   "Pricing": {
-    "sectionTitle": "Harga",
+    "title": "Akses AI Eksklusif",
+    "description": "Nikmati fitur premium yang dirancang khusus perusahaan Anda",
     "perSeat": "Harga per seat",
     "perMonth": "/ bulan",
     "cumulative": "Kumulatif",
+    "ctaFreemium": "Coba Gratis",
+    "ctaSales": "Hubungi Sales",
+
     "freemium": {
       "name": "Freemium",
       "price": "Gratis",
@@ -79,9 +81,7 @@
       "users": "1 Pengguna",
       "pricePerSeat": "Rp 0",
       "credits": "100 Generative Credits",
-      "features": [
-        "Unlimited Fitur Inti"
-      ]
+      "features": ["Unlimited Fitur Inti"]
     },
     "plus": {
       "name": "Plus",
@@ -90,14 +90,11 @@
       "users": "10 Pengguna",
       "pricePerSeat": "Rp 399rb",
       "credits": "20.000 Generative Credits",
-      "features": [
-        "Unlimited Fitur Inti",
-        "Produktivitas Konteks Perusahaan"
-      ]
+      "features": ["Unlimited Fitur Inti", "Produktivitas Konteks Perusahaan"]
     },
     "pro": {
       "name": "Pro",
-      "price": "IDR 4.990K",
+      "price": "IDR 8.990K",
       "badge": "Rekomendasi",
       "description": "Pilihan terpopuler bagi bisnis menengah dengan kustomisasi AI dan admin",
       "users": "25 Pengguna",
@@ -133,16 +130,14 @@
       "users": "Unlimited Pengguna",
       "pricePerSeat": "custom",
       "credits": "Unlimited Generative Credits",
-      "features": [
-        "Semua fitur",
-        "On-Premise Deployment",
-        "SSO & SLA 99%"
-      ]
+      "features": ["Semua fitur", "On-Premise Deployment", "SSO & SLA 99%"]
     }
   },
   "CTA": {
     "title": "Personalisasi asisten AI untuk bisnis Anda",
-    "description": "Jangan biarkan tim Anda tertinggal. Mulai transformasi digital Anda dan meningkatkan produktivitas tim dengan Spead AI."
+    "description": "Jangan biarkan tim Anda tertinggal. Mulai transformasi digital Anda dan meningkatkan produktivitas tim dengan Spead AI.",
+    "ctaPrimary": "Coba Gratis",
+    "ctaSecondary": "Hubungi Sales"
   },
   "Footer": {
     "tagline": "Spead AI adalah solusi AI yang dikembangkan oleh Caliana, sebuah merek teknologi yang fokus pada inovasi dan transformasi digital.",
