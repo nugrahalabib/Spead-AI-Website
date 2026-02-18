@@ -1,0 +1,238 @@
+/* Gradient utilities dari spead app */
+
+.gradient__text {
+  background: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary-50) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+}
+.graydient__text {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+}
+.dark .graydient__text {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+}
+
+.gradient__border-normal-active {
+  background-color: white;
+  border: transparent 4px solid !important;
+  background:
+    radial-gradient(circle at 50% 50%, white, white) padding-box,
+    linear-gradient(90deg, #ff4174, #0090e8) border-box;
+}
+
+.gradient__border-normal-unactive {
+  background-color: var(--background-muted);
+  border: transparent 4px solid !important;
+  background:
+    radial-gradient(circle at 50% 50%, var(--foreground), var(--foreground)) padding-box,
+    linear-gradient(90deg, var(--border), var(--border)) border-box;
+}
+
+.gradient__border-dashed {
+  border: 2px dashed;
+  border-color: var(--background);
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(90deg, var(--color-secondary), var(--color-primary-50)) border-box;
+}
+
+.gradient__border-dashed__bg-muted {
+  border: 2px dashed;
+  border-color: var(--background-muted);
+  background:
+    linear-gradient(var(--background-muted), var(--background-muted)) padding-box,
+    linear-gradient(90deg, var(--color-secondary), var(--color-primary-50)) border-box;
+}
+
+.gradient__border-thin {
+  color: var(--foreground) !important;
+  background-color: var(--background);
+  border: transparent 1px solid !important;
+  background:
+    linear-gradient(90deg, #5478997d, var(--background-muted)) padding-box,
+    linear-gradient(90deg, var(--background-muted), #5478997d) border-box;
+}
+.gradient__border-thin-flipped {
+  color: var(--foreground) !important;
+  background-color: var(--background-muted);
+  border: transparent 1px solid !important;
+  background:
+    radial-gradient(circle at 50% 50%, var(--background), var(--background)) padding-box,
+    linear-gradient(90deg, var(--color-primary-50), var(--color-secondary)) border-box;
+}
+.gradient__border-thin-flipped__bg-muted {
+  color: var(--foreground) !important;
+  background-color: var(--background-muted);
+  border: transparent 1px solid !important;
+  background:
+    radial-gradient(circle at 50% 50%, var(--background-muted), var(--background-muted)) padding-box,
+    linear-gradient(90deg, var(--color-primary-50), var(--color-secondary)) border-box;
+}
+
+.gradient__background {
+  background: linear-gradient(88.79deg, var(--color-primary-50) 0.99%, var(--color-secondary) 98.91%);
+}
+
+.gradient__btn {
+  background: linear-gradient(88.79deg, var(--color-primary-50) 0.99%, var(--color-secondary) 98.91%);
+  color: #f2f2f2 !important;
+}
+
+.gradient__btn:hover {
+  background: linear-gradient(88.79deg, var(--color-secondary) 0.99%, var(--color-primary-50) 98.91%);
+  opacity: 0.95;
+}
+
+.gradient__btn:active {
+  opacity: 0.8;
+}
+
+.gradient__selected {
+  background-color: white;
+  border: transparent 1px solid !important;
+  background:
+    linear-gradient(90deg, rgba(255, 65, 116, 0.2) 0%, rgba(0, 144, 232, 0.2) 100%) padding-box,
+    linear-gradient(90deg, rgba(255, 65, 116, 0.3), rgba(255, 65, 116, 0.3)) border-box;
+}
+
+.graydient__divider {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.dark .graydient__divider {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgb(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+.graydient__divider-vertical {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.dark .graydient__divider-vertical {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+/* buat input, dpt inspirasi dr sini */
+/* 
+https://css-tricks.com/gradient-borders-in-css/ 
+https://codepen.io/fabianmichael/pen/yLPyRry 
+*/
+
+.gradient-input-wrapper {
+  position: relative;
+  border-radius: var(--radius);
+}
+
+.gradient-input-wrapper input {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-input-wrapper:focus-within::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  padding: 1px;
+  background: linear-gradient(90deg, var(--color-primary-50), var(--color-secondary));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.gradient__border-input-thin {
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+}
+
+/* buat textarea */
+.gradient-input-wrapper-lg {
+  position: relative;
+  border-radius: 1rem;
+}
+
+.gradient-input-wrapper-lg input,
+.gradient-input-wrapper-lg textarea {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-input-wrapper-lg:focus-within::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  padding: 3px;
+  background: linear-gradient(90deg, var(--color-primary-50), var(--color-secondary));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}

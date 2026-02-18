@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "next-devtools": {
+      "command": "fnm",
+      "args": ["exec", "--using=default", "npx.cmd", "-y", "next-devtools-mcp@latest"]
+    }
+  }
+}
