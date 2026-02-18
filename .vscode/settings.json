@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^cd D:\\\\DNA\\\\spead-ai-compro\\\\src\\\\app; New-Item -ItemType Directory -Path \"\\[locale\\]\" -Force; Move-Item -Path \"blog\" -Destination \"\\[locale\\]\\\\blog\" -Force; Move-Item -Path \"news\" -Destination \"\\[locale\\]\\\\news\" -Force; Move-Item -Path \"booking\" -Destination \"\\[locale\\]\\\\booking\" -Force; Move-Item -Path \"linkbio\" -Destination \"\\[locale\\]\\\\linkbio\" -Force; Move-Item -Path \"new-home\" -Destination \"\\[locale\\]\\\\new-home\" -Force; Move-Item -Path \"page\\.tsx\" -Destination \"\\[locale\\]\\\\page\\.tsx\" -Force$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}
