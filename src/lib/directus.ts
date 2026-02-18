@@ -267,11 +267,11 @@ export async function getGlobalSettings(): Promise<GlobalSettings | null> {
         const result = await directus.request(readSingleton('global_settings'));
 
         // DEBUG LOG
-        console.log("🔥 DIRECTUS RAW:", JSON.stringify(result, null, 2));
+        // console.log("🔥 DIRECTUS RAW:", JSON.stringify(result, null, 2));
 
         // CRITICAL FIX: Unwrap Array if present
         if (Array.isArray(result)) {
-            console.log("⚠️ Array detected! Unwrapping...");
+            // console.log("⚠️ Array detected! Unwrapping...");
             return result[0];
         }
 
