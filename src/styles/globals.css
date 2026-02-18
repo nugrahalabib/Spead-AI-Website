@@ -1,7 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Import Spead design system utilities */
-@import './design-system/gradients.css';
+@import "./design-system/gradients.css";
 
 /* Class-based dark mode — next-themes adds .dark class to <html> */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -87,6 +87,11 @@
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
 
+  /* Custom Shadows */
+  --shadow-primary-glow: 0px -19px 100px 0px #0090e880;
+  --shadow-secondary-glow: 0px -20px 100px 0px #ff417480;
+  --shadow-dual-glow: 0px -19px 100px 0px #0090e880, 0px -20px 100px 0px #ff417480;
+
   /* Animations */
   --animate-aurora: aurora 10s infinite alternate;
   --animate-float-slow: float 8s ease-in-out infinite;
@@ -105,7 +110,7 @@
     --card-foreground: #0f1b28;
     --popover: #ffffff;
     --popover-foreground: #0f1b28;
-    
+
     --primary: #171717;
     --primary-foreground: #6b7280;
     --secondary: #ff4174;
@@ -116,7 +121,7 @@
     --accent-foreground: #171717;
     --destructive: #dc362e;
     --destructive-foreground: #6b7280;
-    
+
     --border: rgba(28, 27, 31, 0.12);
     --input: #aeaaae;
     --ring: #0f1b28;
@@ -136,7 +141,7 @@
     --card-foreground: #f2f2f2;
     --popover: #1c2833;
     --popover-foreground: #f2f2f2;
-    
+
     --primary: #f2f2f2;
     --primary-foreground: #2b1d1d;
     --secondary: #ff4174;
@@ -147,7 +152,7 @@
     --accent-foreground: #f2f2f2;
     --destructive: #f95d56;
     --destructive-foreground: #f2f2f2;
-    
+
     --border: rgba(255, 255, 255, 0.2);
     --input: rgba(255, 255, 255, 0.2);
     --ring: #d4d4d4;
@@ -170,28 +175,29 @@
   .bg-grid-pattern {
     mask-image: linear-gradient(to bottom, black, transparent);
   }
-}
 
-/* Global Grid Background */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  /* Adaptive grid for light/dark mode */
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: -1;
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-  opacity: 0.3;
-}
+  h1,
+  h2,
+  h3 {
+    @apply text-3xl font-bold lg:text-4xl text-foreground;
+  }
 
-.dark body::before {
-  opacity: 0.2;
+  h4,
+  h5 {
+    @apply text-lg font-semibold lg:text-xl text-foreground;
+  }
+
+  h6 {
+    @apply text-sm font-semibold lg:text-base text-foreground;
+  }
+
+  p {
+    @apply text-sm lg:text-base text-foreground;
+  }
+
+  span {
+    @apply text-sm lg:text-base text-primary-95;
+  }
 }
 
 /* Premium Glassmorphism */
@@ -221,6 +227,15 @@ body::before {
   opacity: 0.7;
 }
 
+/* Hide scrollbar utility (used for horizontal scroll containers) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Animations */
 @keyframes aurora {
   0% {
@@ -237,7 +252,6 @@ body::before {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);

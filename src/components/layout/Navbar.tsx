@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/navigation';
-import Image from 'next/image';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { Menu, X } from "lucide-react";
+import { useActiveSection } from "@/context/ActiveSectionContext";
 
 type NavItem = {
   id: string;
@@ -14,30 +15,31 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { id: 'home', labelKey: 'home', href: '/' },
-  { id: 'features', labelKey: 'features', href: '/#features' },
-  { id: 'pricing', labelKey: 'pricing', href: '/#pricing' },
-  { id: 'contact', labelKey: 'contact', href: '/#contact' },
+  { id: "home", labelKey: "home", href: "/" },
+  { id: "features", labelKey: "features", href: "/#features" },
+  { id: "pricing", labelKey: "pricing", href: "/#pricing" },
+  { id: "contact", labelKey: "contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
-  const t = useTranslations('Navbar');
-  const pathname = usePathname();
+  const t = useTranslations("Navbar");
+  const { activeSection } = useActiveSection();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname.startsWith(href.replace('/#', '/'));
+    if (href === "/") return activeSection === "home";
+    // extract section id from href like "/#features" → "features"
+    const id = href.replace("/#", "");
+    return activeSection === id;
   };
 
   return (
     <header className="fixed top-0 z-50 w-full">
-      <div className="w-full border-b bg-background border-border backdrop-blur-md">
-        <nav className="flex items-center justify-between max-w-7xl mx-auto  px-4 py-2.5 lg:px-6">
-
+      <div className="w-full bg-background backdrop-blur-md">
+        <nav className="flex items-center justify-between max-w-7xl mx-auto  px-4 py-2.5 lg:px-6 lg:gap-3">
           {/* Mobile: Hamburger */}
           <button
-            className="flex items-center justify-center transition-colors rounded-lg lg:hidden w-9 h-9 text-muted-foreground hover:text-foreground"
+            className="flex items-center justify-center transition-colors rounded-lg lg:hidden w-9 h-9 text-primary-95 hover:text-foreground"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -45,7 +47,7 @@ const Navbar = () => {
           </button>
 
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center flex-1 shrink-0">
             <Image
               src="/logo_spead_ai_color.png"
               alt="Spead AI"
@@ -63,10 +65,11 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   className={`
-                    px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200
-                    ${isActive(item.href)
-                      ? 'bg-glass-hover text-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-glass'
+                    px-4 py-2 rounded-lg text-sm transition-colors duration-200
+                    ${
+                      isActive(item.href)
+                        ? "gradient__border-thin"
+                        : "text-primary-95 hover:text-foreground hover:bg-glass"
                     }
                   `}
                 >
@@ -79,6 +82,7 @@ const Navbar = () => {
           {/* Language Switcher */}
           <LanguageSwitcher />
         </nav>
+        <div className="h-px graydient__divider"></div>
       </div>
 
       {/* Mobile Overlay */}
@@ -92,15 +96,15 @@ const Navbar = () => {
       {/* Mobile Slide-in Menu */}
       <div
         className={`
-          fixed top-0 right-0 z-50 h-full w-72 bg-background-muted border-l border-border
+          fixed top-0 right-0 z-50 h-full w-full bg-background-muted border-l border-border
           transition-transform duration-300 ease-in-out lg:hidden
-          ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}
+          ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
         <div className="flex items-center justify-between p-4 border-b border-border">
           <span className="text-sm font-semibold text-foreground">Menu</span>
           <button
-            className="flex items-center justify-center w-8 h-8 transition-colors rounded-lg text-muted-foreground hover:text-foreground"
+            className="flex items-center justify-center w-8 h-8 transition-colors rounded-lg text-primary-95 hover:text-foreground"
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
           >
@@ -115,10 +119,11 @@ const Navbar = () => {
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={`
-                  block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200
-                  ${isActive(item.href)
-                    ? 'bg-glass-hover text-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-glass'
+                  block px-4 py-3 rounded-lg text-sm transition-colors duration-200
+                  ${
+                    isActive(item.href)
+                      ? "bg-glass-hover text-foreground"
+                      : "text-primary-95 hover:text-foreground hover:bg-glass"
                   }
                 `}
               >

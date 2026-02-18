@@ -8,7 +8,9 @@
   "Hero": {
     "badge": "No. 1 Best Administrative AI in Indonesia",
     "title": "Meet your AI administrative employee",
-    "description": "Spead AI enables secure AI implementation leveraging institutional knowledge with full data governance and control."
+    "description": "Spead AI enables secure AI implementation leveraging institutional knowledge with full data governance and control.",
+    "ctaPrimary": "Try for Free",
+    "ctaSecondary": "Contact Sales"
   },
   "Features": {
     "sectionTitle": "Features",
@@ -62,16 +64,19 @@
       "title": "Data Security",
       "description": "Strong Governance with Full Control over Data"
     },
-    "exclusiveAccess": {
-      "title": "Exclusive AI Access",
-      "description": "Access enterprise capabilities configured to your organizational requirements"
+    "dataSecurity": {
+      "title": "Data Security",
+      "description": "Strong Governance with Full Control over Data"
     }
   },
   "Pricing": {
-    "sectionTitle": "Pricing",
+    "title": "Exclusive AI Access",
+    "description": "Enjoy premium features designed specifically for your company",
     "perSeat": "Price per seat",
     "perMonth": "/ month",
     "cumulative": "Cumulative",
+    "ctaFreemium": "Try for Free",
+    "ctaSales": "Contact Sales",
     "freemium": {
       "name": "Freemium",
       "price": "Free",
@@ -79,9 +84,7 @@
       "users": "1 User",
       "pricePerSeat": "IDR 0",
       "credits": "100 Generative Credits",
-      "features": [
-        "Unlimited Core Features"
-      ]
+      "features": ["Unlimited Core Features"]
     },
     "plus": {
       "name": "Plus",
@@ -90,10 +93,7 @@
       "users": "10 User",
       "pricePerSeat": "IDR 399K",
       "credits": "20,000 Generative Credits",
-      "features": [
-        "Unlimited Core Features",
-        "Company Context Productivity"
-      ]
+      "features": ["Unlimited Core Features", "Company Context Productivity"]
     },
     "pro": {
       "name": "Pro",
@@ -125,11 +125,22 @@
         "Special Onboarding",
         "Special Account Manager"
       ]
+    },
+    "custom": {
+      "name": "Custom",
+      "price": "Contact Sales",
+      "description": "Fully customized packages to your needs, on-premise option available",
+      "users": "Unlimited Users",
+      "pricePerSeat": "custom",
+      "credits": "Unlimited Generative Credits",
+      "features": ["All features", "On-Premise Deployment", "SSO & SLA 99%"]
     }
   },
   "CTA": {
     "title": "Build AI assistants that fit your business",
-    "description": "Transform faster, work smarter with Spead AI"
+    "description": "Transform faster, work smarter with Spead AI",
+    "ctaPrimary": "Try for Free",
+    "ctaSecondary": "Contact Sales"
   },
   "Footer": {
     "tagline": "Spead AI is an AI solution developed by Caliana, a technology brand focused on innovation and digital transformation.",

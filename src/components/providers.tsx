@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';
+import { ActiveSectionProvider } from '@/context/ActiveSectionContext';
 
 /**
  * Providers component for next-themes integration
@@ -18,7 +19,7 @@ export function Providers({ children }: { children: ReactNode }) {
       enableSystem={false}
       disableTransitionOnChange
     >
-      {children}
+      <ActiveSectionProvider>{children}</ActiveSectionProvider>
     </ThemeProvider>
   );
 }
