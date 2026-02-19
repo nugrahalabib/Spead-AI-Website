@@ -25,7 +25,7 @@ export default function Pricing() {
   const t = useTranslations("Pricing");
 
   return (
-    <section className="relative px-4 py-8 overflow-hidden lg:py-20 lg:px-16"  id="pricing">
+    <section className="relative px-4 py-8 overflow-hidden lg:py-20 lg:px-16" id="pricing">
       <KelapKelip className="opacity-60 max-lg:top-20" />
       <KelapKelip className="right-0 bottom-20 opacity-60" />
 
@@ -88,20 +88,26 @@ export default function Pricing() {
                         {price.replace("IDR ", "")}
                       </span>
                     </p>
+                  ) : isCustom ? (
+                    <p className="py-1.5 text-base font-extrabold md:text-lg text-foreground">
+                      {price}
+                    </p>
                   ) : (
-                    <p className="text-3xl font-bold md:text-4xl text-foreground">{price}</p>
+                    <p className="text-4xl! font-extrabold md:text-lg text-foreground">
+                      {price}
+                    </p>
                   )}
                 </div>
 
                 {/* Description */}
-                <p className="text-xs text-center text-primary-95">
+                <p className="text-xs text-center text-primary-95 min-h-10 lg:min-h-14">
                   {t(`${key}.description`)}
                 </p>
 
                 {/* Features list */}
                 <ul className="flex-1 space-y-3">
                   {items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
+                    <li key={i} className="flex items-center gap-2">
                       <CheckIcon />
                       <span className="text-xs text-foreground">{item}</span>
                     </li>
@@ -109,10 +115,7 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                <Button
-                  variant={isPro ? "primary" : "outline"}
-                  className="flex w-full p-0 text-sm"
-                >
+                <Button variant={isPro ? "primary" : "outline"} className="flex w-full p-0 text-sm">
                   <Link
                     href={`https://wa.me/628119152066?text=${isFreemium ? HELLO_MESSAGE_TRIAL : HELLO_MESSAGE}`}
                     rel="noreferrer"
