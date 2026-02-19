@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import KelapKelip from "../reusable/KelapKelip";
 import Button from "../reusable/Button";
+import { Link } from "@/i18n/navigation";
+import { HELLO_MESSAGE, HELLO_MESSAGE_TRIAL } from "@/const";
 
 const PLAN_KEYS = ["freemium", "plus", "pro", "enterprise", "custom"] as const;
 
@@ -107,8 +109,18 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                <Button variant={isPro ? "primary" : "outline"} className="w-full text-sm">
-                  {isFreemium ? t("ctaFreemium") : t("ctaSales")}
+                <Button
+                  variant={isPro ? "primary" : "outline"}
+                  className="flex w-full p-0 text-sm"
+                >
+                  <Link
+                    href={`https://wa.me/628119152066?text=${isFreemium ? HELLO_MESSAGE_TRIAL : HELLO_MESSAGE}`}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="flex items-center justify-center w-full py-2"
+                  >
+                    {isFreemium ? t("ctaFreemium") : t("ctaSales")}
+                  </Link>
                 </Button>
               </>
             );
