@@ -44,7 +44,7 @@ export default function Feature() {
   const t = useTranslations("Features");
 
   return (
-    <section className="relative px-4 py-8 overflow-hidden lg:py-20 lg:px-16 scroll-m-36" id="features">
+    <section className="relative px-4 py-8 overflow-hidden lg:py-28 lg:px-16 scroll-m-36" id="features">
       <KelapKelip className="opacity-60 max-lg:top-14 size-40" />
       <KelapKelip className="right-0 bottom-20 size-52 opacity-60" />
 
