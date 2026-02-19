@@ -68,7 +68,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="https://www.caliana.id/about-us"
-                  className="text-sm text-foreground lg:text-base"
+                  className="text-sm text-foreground "
                 >
                   {t("aboutUs")}
                 </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="https://www.caliana.id/blog"
-                  className="text-sm text-foreground lg:text-base"
+                  className="text-sm text-foreground "
                 >
                   {t("blog")}
                 </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
             <h4 className="mb-4 text-sm font-semibold text-foreground lg:text-xl">
               {t("locationTitle")}
             </h4>
-            <p className="text-sm leading-relaxed text-foreground lg:text-base">{t("address")}</p>
+            <p className="text-sm leading-relaxed text-foreground ">{t("address")}</p>
           </div>
 
           {/* Col 4: Contact Us */}
@@ -103,7 +103,7 @@ const Footer = () => {
                   href={`https://wa.me/628119152066?text=${HELLO_MESSAGE}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-sm text-foreground lg:text-base"
+                  className="flex items-center gap-2.5 text-sm text-foreground "
                 >
                   <WhatsappIcon className="w-4 h-4 shrink-0" />
                   {t("phone1")}
@@ -112,7 +112,7 @@ const Footer = () => {
               <li>
                 <a
                   href="tel:0217210588"
-                  className="flex items-center gap-2.5 text-sm text-foreground lg:text-base"
+                  className="flex items-center gap-2.5 text-sm text-foreground "
                 >
                   <PhoneIcon className="w-4 h-4 shrink-0" />
                   {t("phone2")}
@@ -121,7 +121,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:info@caliana.id"
-                  className="flex items-center gap-2.5 text-sm text-foreground lg:text-base"
+                  className="flex items-center gap-2.5 text-sm text-foreground "
                 >
                   <EmailIcon className="w-4 h-4 shrink-0" />
                   {t("email")}
@@ -144,7 +144,7 @@ const Footer = () => {
               alt="Caliana"
               width={100}
               height={28}
-              className="object-contain w-auto h-6"
+              className="object-contain w-20 h-6 lg:w-auto"
             />
           </div>
 
