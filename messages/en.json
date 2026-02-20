@@ -8,7 +8,7 @@
   "Hero": {
     "badge": "No. 1 Best Administrative AI in Indonesia",
     "title": "Meet your AI administrative employee",
-    "description": "Spead AI enables secure AI implementation leveraging institutional knowledge with full data governance and control.",
+    "description": "Spead AI enables secure AI implementation by leveraging institutional knowledge with full data governance and control.",
     "ctaPrimary": "Try for Free",
     "ctaSecondary": "Contact Sales"
   },
@@ -90,7 +90,7 @@
       "name": "Plus",
       "price": "IDR 3.990K",
       "description": "For Teams & Small Businesses",
-      "users": "10 User",
+      "users": "10 Users",
       "pricePerSeat": "IDR 399K",
       "credits": "20,000 Generative Credits",
       "features": ["Unlimited Core Features", "Company Context Productivity"]
@@ -100,7 +100,7 @@
       "price": "IDR 8.990K",
       "badge": "Recommendation",
       "description": "Most chosen by mid-market companies requiring AI customization and administrative control",
-      "users": "25 User",
+      "users": "25 Users",
       "pricePerSeat": "IDR 359K",
       "credits": "60,000 Generative Credits",
       "features": [
@@ -116,7 +116,7 @@
       "name": "Enterprise",
       "price": "IDR 15.000K",
       "description": "Fully customized to business specifications, with on-premise deployment for maximum control",
-      "users": "50 User",
+      "users": "50 Users",
       "pricePerSeat": "IDR 300K",
       "credits": "150,000 Generative Credits",
       "features": [

@@ -6,7 +6,7 @@ export default function Hero() {
   const t = useTranslations("Hero");
   return (
     <div className="p-3 mt-16 ">
-      <section className="relative p-4 overflow-hidden lg:p-6 bg-background-muted">
+      <section className="relative px-4 py-12 overflow-hidden lg:py-20 lg:px-6 bg-background-muted">
         {/* GRADIENT BG FOR MOBILE */}
         <div className="absolute lg:hidden w-full h-[700px] z-0 left-0 bg-linear-to-b from-secondary via-primary-50 via-90% to-transparent opacity-20 isolate -translate-y-[250px]"></div>
         {/* END */}
@@ -26,7 +26,7 @@ export default function Hero() {
           </div>
 
           {/* pideo */}
-          <div className="py-14">
+          <div className="py-16 xl:py-20">
             {/* <Image src={gifWebp} className="shadow-dual-glow" alt="gifspead" /> */}
             <video
               playsInline
@@ -34,7 +34,7 @@ export default function Hero() {
               muted
               loop
               controls={false}
-              className="w-fit lg:max-w-4xl xl:max-w-5xl shadow-dual-glow"
+              className="w-fit lg:max-w-4xl xl:max-w-6xl shadow-dual-glow"
             >
               <source src={"/videos/HERO_SPEAD.webm"} type="video/webm" />
               Your browser does not support the video tag.

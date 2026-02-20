@@ -34,7 +34,7 @@ export default function WhySpead() {
 
   return (
     <div className="p-3">
-      <section className="relative px-4 py-16 overflow-hidden bg-background-muted">
+      <section className="relative px-4 py-12 overflow-hidden lg:py-28 bg-background-muted">
         {/* GRADIENT BG WHY */}
         <div className="absolute size-[700px] z-0 left-1/2 -translate-x-1/2 bg-linear-to-b rounded-full from-secondary via-primary-50 via-90% to-transparent opacity-20 isolate -top-[450px] blur-3xl" />
 
