@@ -121,7 +121,7 @@ export default function Pricing() {
                         : `https://wa.me/628119152066?text=${HELLO_MESSAGE}`
                     }
                     rel="noreferrer"
-                    target="_blank"
+                    target={isFreemium ? undefined : "_blank"}
                     className="flex items-center justify-center w-full py-2"
                   >
                     {isFreemium ? t("ctaFreemium") : t("ctaSales")}
