@@ -93,9 +93,7 @@ export default function Pricing() {
                       {price}
                     </p>
                   ) : (
-                    <p className="text-4xl! font-extrabold md:text-lg text-foreground">
-                      {price}
-                    </p>
+                    <p className="text-4xl! font-extrabold md:text-lg text-foreground">{price}</p>
                   )}
                 </div>
 
@@ -117,9 +115,13 @@ export default function Pricing() {
                 {/* CTA */}
                 <Button variant={isPro ? "primary" : "outline"} className="flex w-full p-0 text-sm">
                   <Link
-                    href={`https://wa.me/628119152066?text=${isFreemium ? HELLO_MESSAGE_TRIAL : HELLO_MESSAGE}`}
+                    href={
+                      isFreemium
+                        ? "https://spead.caliana.id/auth"
+                        : `https://wa.me/628119152066?text=${HELLO_MESSAGE}`
+                    }
                     rel="noreferrer"
-                    target="_blank"
+                    target={isFreemium ? undefined : "_blank"}
                     className="flex items-center justify-center w-full py-2"
                   >
                     {isFreemium ? t("ctaFreemium") : t("ctaSales")}
