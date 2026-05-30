@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import KelapKelip from "../reusable/KelapKelip";
 import Button from "../reusable/Button";
 import { Link } from "@/i18n/navigation";
-import { HELLO_MESSAGE, HELLO_MESSAGE_TRIAL } from "@/const";
+import { HELLO_MESSAGE } from "@/const";
 
 const PLAN_KEYS = ["freemium", "plus", "pro", "enterprise", "custom"] as const;
 

@@ -1,6 +1,5 @@
 import { Link } from "@/i18n/navigation";
 import Button from "../reusable/Button";
-import { HELLO_MESSAGE_TRIAL } from "@/const";
 import { useTranslations } from "next-intl";
 
 export default function TrialBtn() {
