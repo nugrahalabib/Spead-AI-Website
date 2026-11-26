@@ -8,10 +8,10 @@ services:
       - ./directus/database:/directus/database
       - ./directus/uploads:/directus/uploads
     environment:
-      KEY: "REMOVED_DIRECTUS_KEY"
-      SECRET: "REMOVED_DIRECTUS_SECRET"
+      KEY: "${DIRECTUS_KEY}"
+      SECRET: "${DIRECTUS_SECRET}"
       ADMIN_EMAIL: "admin@spead.ai"
-      ADMIN_PASSWORD: "REMOVED_DIRECTUS_ADMIN_PASSWORD"
+      ADMIN_PASSWORD: "${DIRECTUS_ADMIN_PASSWORD}"
       DB_CLIENT: "sqlite3"
       DB_FILENAME: "/directus/database/data.db"
       WEBSOCKETS_ENABLED: "true"
