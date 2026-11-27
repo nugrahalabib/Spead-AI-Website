@@ -20,7 +20,7 @@ const PLANS: Record<string, { name: string; price: string; color: string }> = {
 
 function BookingFormContent() {
     const searchParams = useSearchParams();
-    const planFromUrl = searchParams.get('plan') || 'professional';
+    const planFromUrl = searchParams.get('plan') || 'pro';
 
     const [formData, setFormData] = useState({
         full_name: '',
@@ -73,7 +73,7 @@ function BookingFormContent() {
         }
     };
 
-    const selectedPlan = PLANS[formData.selected_plan as keyof typeof PLANS] || PLANS.professional;
+    const selectedPlan = PLANS[formData.selected_plan as keyof typeof PLANS] || PLANS.pro;
 
     if (isSuccess) {
         return (
